@@ -6,7 +6,7 @@ curriculo_pdf_en: curriculo-en.pdf  # opcional: versão em inglês, anexada em v
 busca:
   termos: ["estágio desenvolvimento", "desenvolvedor júnior", "desenvolvedor java", "full stack júnior",
            "spring boot", "react", "java developer", "junior full stack developer"]
-  localizacao: "Brasil"   # Teresina tem poucas vagas: busca no Brasil todo e deixa a IA pesar local/remoto
+  localizacao: "Brasil"   # cidade, estado ou "Brasil"; a IA pesa local e remoto na nota
   aceitar_remoto: true
   # vagas cujo título contenha alguma dessas palavras são descartadas antes da IA (economiza chamadas)
   excluir_titulos: ["sênior", "senior", "sr.", "pleno", "staff", "principal", "lead", "líder", "especialista",
