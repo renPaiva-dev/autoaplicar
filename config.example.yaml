@@ -1,0 +1,66 @@
+# Copie para config.yaml e ajuste:  cp config.example.yaml config.yaml
+
+curriculo_pdf: curriculo.pdf        # caminho do seu currículo em PDF
+curriculo_pdf_en: curriculo-en.pdf  # opcional: versão em inglês, anexada em vagas em inglês
+
+busca:
+  termos: ["estágio desenvolvimento", "desenvolvedor júnior", "desenvolvedor java", "full stack júnior",
+           "spring boot", "react", "java developer", "junior full stack developer"]
+  localizacao: "Brasil"   # Teresina tem poucas vagas: busca no Brasil todo e deixa a IA pesar local/remoto
+  aceitar_remoto: true
+  # vagas cujo título contenha alguma dessas palavras são descartadas antes da IA (economiza chamadas)
+  excluir_titulos: ["sênior", "senior", "sr.", "pleno", "staff", "principal", "lead", "líder", "especialista",
+                    "gerente", "manager", "coordenador", "arquiteto", "architect", "director"]
+  max_vagas_por_fonte: 30
+
+# Nota mínima (0-100) para uma vaga aparecer em "revisar"
+nota_minima: 60
+
+# Limite de candidaturas por execução de "aplicar" (evita bloqueio nas plataformas)
+limite_aplicacoes: 10
+
+# Pausa aleatória entre ações no navegador, em segundos
+pausa: [1.5, 4.0]
+
+fontes:
+  gupy: true
+  greenhouse:
+    # "board token" das empresas: https://boards.greenhouse.io/<token>
+    empresas: []   # ex.: ["gitlab"]; o token está em boards.greenhouse.io/<token>
+    # só vagas cujo título contenha uma dessas palavras (vazio = todas)
+    palavras_titulo: ["junior", "júnior", "intern", "estágio", "java", "full stack", "fullstack", "react", "frontend", "backend"]
+  lever:
+    # https://jobs.lever.co/<empresa>
+    empresas: []
+    palavras_titulo: ["junior", "júnior", "intern", "estágio", "java", "full stack", "fullstack", "react", "frontend", "backend"]
+  linkedin: true        # só vagas com "Candidatura simplificada" (Easy Apply)
+  indeed: true
+  # Sites sem API: busca pelo navegador. {termo} e {local} são substituídos.
+  # link_regex identifica os links de vagas na página de resultados.
+  navegador:
+    catho:
+      url: "https://www.catho.com.br/vagas/{termo_slug}/"
+      link_regex: "catho\\.com\\.br/vagas/[^/]+/\\d+"
+    infojobs:
+      url: "https://www.infojobs.com.br/empregos.aspx?palabra={termo}"
+      link_regex: "infojobs\\.com\\.br/vaga-de-[^?#]+\\.aspx"
+
+# Respostas fixas para perguntas comuns de formulário.
+# A IA usa isto antes de perguntar a você. Respostas que você der no terminal
+# são salvas automaticamente em dados/respostas.json e reaproveitadas.
+# Deixe vazio o que você não quiser fixar: a IA pergunta no terminal na primeira vez e salva.
+respostas_padrao:
+  nome: ""
+  email: ""
+  telefone: ""
+  cidade: ""
+  github_url: ""
+  linkedin_url: ""
+  portfolio_url: ""
+  formacao_status: ""
+  pretensao_salarial: "A combinar"
+  disponibilidade_inicio: ""
+  aceita_presencial: ""
+  nivel_ingles: ""
+  possui_cnh: ""
+  pcd: ""

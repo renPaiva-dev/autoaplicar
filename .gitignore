@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+dados/
+config.yaml
+*.pdf
+curriculo*.html
