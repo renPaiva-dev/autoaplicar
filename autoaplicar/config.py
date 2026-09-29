@@ -29,3 +29,4 @@ def carregar(caminho: str | Path = RAIZ / "config.yaml") -> dict:
     cfg.setdefault("pausa", [1.5, 4.0])
     DADOS.mkdir(exist_ok=True)
     return cfg
+#a
